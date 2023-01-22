@@ -8,6 +8,7 @@
   <meta name="keywords" content=" ">
   <meta name="author" content="Юлия Бондаренко">
   <link rel="stylesheet" href="./style.css">
+  <script src="./script.js"></script>
   <title>Сервис Место</title>
 </head>
 
@@ -101,5 +102,67 @@
     <h2 class="footer__copyright">&copy; 2022 Mesto Russia</h2>
   </footer>
 </body>
+
+<!-- <container class="popup">
+  <h2 class="popup__title">Редактировать профиль</h2>
+  <p></p>
+  <button class="popup__button">Сохранить</popup__button>
+</container> -->
+
+<!-- <container class="popup"> 
+  <form class="popup__editprofile">
+      <img src="./images/closeicon.svg" class="close-popup">
+      <label>
+          <input type="text" name="name">
+          <div class="label__text">
+              Жак-Ив Кусто
+          </div>
+      </label>
+    
+      <label>
+          <textarea name="message"></textarea>
+          <div class="label__text">
+              Исследователь океана
+          </div>
+      </label>
+      <button class="popup__button">Сохранить</popup__button>
+  </form>
+</container>   -->
+
+<!-- <div class="popup popup_profile-edit">
+  <div class="popup__container popup__overlay">
+    <form class="popup__form" name="popupForm" novalidate>
+      <h2 class="popup__title">Редактировать профиль</h2>
+      <input name="userName" type="text" class="popup__input popup__input_data_name" id="userName-input"
+        placeholder="Жак-Ив Кусто" minlength="2" maxlength="40" pattern="^[a-zA-Zа-яА-я-\s]+$" required>
+      <span class="popup__input-error userName-input-error"></span>
+      <input name="userAbout" type="text" class="popup__input popup__input_data_about" id="userAbout-input"
+        placeholder="Исследователь океана" minlength="2" pattern="^[a-zA-Zа-яА-я-\s]+$" maxlength="200" required>
+      <span class="popup__input-error userAbout-input-error"></span>
+      <button type="submit" class="popup__button">Сохранить</button>
+    </form>
+    <button type="button" class="popup__close-button"></button>
+  </div>
+</div> -->
+<div class="popup__closebutton"><img src="./images/closeicon.svg"></div>
+
+  <container class="popup">
+    
+  <form class="popup__editprofile">
+    
+    <h2 class="popup__title">Редактировать профиль</h2>
+    <label class="popup__form">
+      <input class="popup__editform" type="text" name="name">
+    </label>
+    <img src="./images/popupeditprofileformline.svg">
+    <label class="popup__form">
+      <input class="popup__editform" type="text" name="about" placeholder="Исследователь океана">
+    </label>
+    <img src="./images/popupeditprofileformline.svg">
+    <button class="popup__savebutton" type="submit">Сохранить</button>
+    
+  </form>
+  
+  </container>
 
 </html>
