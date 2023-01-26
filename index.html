@@ -8,7 +8,6 @@
   <meta name="keywords" content=" ">
   <meta name="author" content="Юлия Бондаренко">
   <link rel="stylesheet" href="./style.css">
-  <script src="./script.js"></script>
   <title>Сервис Место</title>
 </head>
 
@@ -18,29 +17,26 @@
     <img class="header__borderline" src="./images/line.jpg">
   </header>
   <main class="content">
-
     <section class="profile">
       <div class="profile__content">
         <img class="profile__avatar" src="./images/avatar.jpg" alt="изображение аватара пользователя">
-
         <div class="profile__info">
           <div class="profile__title">
             <h1 class="profile__name">Жак-Ив Кусто</h1>
-            <button class="profile__editbutton">
-              <img class="profile__editbutton" src="./images/editbutton.svg"
-                alt="кнопка редактирования личной информации профиля">
+            <button class="profile__editbutton profile__editbutton_popup_opened link">
+              <a href="#" class="profile__openpopup"><img class="profile__editbutton" src="./images/editbutton.svg"
+                  alt="кнопка редактирования личной информации профиля">
+              </a>
             </button>
           </div>
           <p class="profile__about">Исследователь океана</p>
         </div>
       </div>
-
-      <button class="profile__addbutton-img profile__addbutton">
+      <button class="profile__addbutton-img profile__addbutton link">
         <!-- <img class="profile__addbutton-img" src="./images/addbutton-1.svg"
           alt="кнопка добавления нового контента в аккаунт"> -->
       </button>
     </section>
-
     <section class="elements">
       <article class="element">
         <img class="element__photo" src="./images/1. Royal-Botanical-Gardens-of-Peradeniya_Kandy_Sri-Lanka-2-min.jpg">
@@ -101,28 +97,26 @@
   <footer class="footer">
     <h2 class="footer__copyright">&copy; 2022 Mesto Russia</h2>
   </footer>
+  <section class="popup">
+    <div class="popup__background"></div>
+    <div class="popup__closebutton link"><img src="./images/closeicon.svg"></div>
+    <container class="popup__container">
+      <h2 class="popup__title">Редактировать профиль</h2>
+      <form class="popup__editprofile">
+        <label class="popup__form">
+          <input class="popup__editform" type="text" name="name" placeholder="Жак-Ив Кусто">
+        </label>
+        <img class="popup__line" src="./images/popupeditprofileformline.svg">
+        <label class="popup__form">
+          <input class="popup__editform" type="text" name="about" placeholder="Исследователь океана">
+        </label>
+        <img class="popup__line" src="./images/popupeditprofileformline.svg">
+        <button class="popup__savebutton popup__savebutton_popup_closed link" type="submit">Сохранить</button>
+      </form>
+    </container>
+  </section>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+  <script src="./script.js"></script>
 </body>
-
-
-<div class="popup__closebutton"><img src="./images/closeicon.svg"></div>
-
-<container class="popup">
-
-  <form class="popup__editprofile">
-
-    <h2 class="popup__title">Редактировать профиль</h2>
-    <label class="popup__form">
-      <input class="popup__editform" type="text" name="name">
-    </label>
-    <img src="./images/popupeditprofileformline.svg">
-    <label class="popup__form">
-      <input class="popup__editform" type="text" name="about" placeholder="Исследователь океана">
-    </label>
-    <img src="./images/popupeditprofileformline.svg">
-    <button class="popup__savebutton" type="submit">Сохранить</button>
-
-  </form>
-
-</container>
 
 </html>
