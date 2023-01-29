@@ -1,0 +1,21 @@
+.footer__copyright {
+  padding: 67px 0 60px 0;
+  display: flex;
+  justify-content: flex-start;
+  margin: 0 auto 0 auto;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #545454;
+  width: 100%;
+  max-width: 880px;
+}
+
+@media screen and (max-width: 880px) {
+  .footer__copyright {
+    font-size: 14px;
+    line-height: 17px;
+    padding: 50px 0 0 0;
+    max-width: 282px;
+  }
+}
