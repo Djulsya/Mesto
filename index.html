@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Mesto">
-  <meta name="keywords" content=" ">
+  <meta name="keywords" content="интерактивный альбом, выложить фото, оценить фото, путешествия">
   <meta name="author" content="Юлия Бондаренко">
   <link rel="stylesheet" href="./style.css">
   <title>Сервис Место</title>
@@ -23,18 +23,15 @@
         <div class="profile__info">
           <div class="profile__title">
             <h1 class="profile__name">Жак-Ив Кусто</h1>
-            <button class="profile__editbutton profile__editbutton_popup_opened link">
-              <a href="#" class="profile__openpopup"><img class="profile__editbutton" src="./images/editbutton.svg"
+            <button class="profile__editbutton popup_opened link">
+              <img class="profile__editbutton" src="./images/editbutton.svg" 
                   alt="кнопка редактирования личной информации профиля">
-              </a>
             </button>
           </div>
           <p class="profile__about">Исследователь океана</p>
         </div>
       </div>
       <button class="profile__addbutton-img profile__addbutton link">
-        <!-- <img class="profile__addbutton-img" src="./images/addbutton-1.svg"
-          alt="кнопка добавления нового контента в аккаунт"> -->
       </button>
     </section>
     <section class="elements">
@@ -42,8 +39,7 @@
         <img class="element__photo" src="./images/1. Royal-Botanical-Gardens-of-Peradeniya_Kandy_Sri-Lanka-2-min.jpg">
         <div class="element__content">
           <p class="element__text">Sri-Lanka, alocasia</p>
-          <button class="element__button">
-            <img class="element__like" src="./images/like.svg">
+          <button class="element__button link">
           </button>
         </div>
       </article>
@@ -51,8 +47,7 @@
         <img class="element__photo" src="./images/2. United-Kingdom-min.jpg">
         <div class="element__content">
           <p class="element__text">UK, papaver</p>
-          <button class="element__button">
-            <img class="element__like" src="./images/like.svg">
+          <button class="element__button link">
           </button>
         </div>
       </article>
@@ -60,8 +55,7 @@
         <img class="element__photo" src="./images/3. Denver_United-States.jpg">
         <div class="element__content">
           <p class="element__text">Denver, nymphaea</p>
-          <button class="element__button">
-            <img class="element__like" src="./images/like.svg">
+          <button class="element__button link">
           </button>
         </div>
       </article>
@@ -69,8 +63,7 @@
         <img class="element__photo" src="./images/4. New-Forest-National-Park_UK.jpg">
         <div class="element__content">
           <p class="element__text">New-Forest, nephrolepis and horse</p>
-          <button class="element__button">
-            <img class="element__like" src="./images/like.svg">
+          <button class="element__button link">
           </button>
         </div>
       </article>
@@ -78,8 +71,7 @@
         <img class="element__photo" src="./images/5. Santa-Maria.jpg">
         <div class="element__content">
           <p class="element__text">Campania, caladium</p>
-          <button class="element__button">
-            <img class="element__like" src="./images/like.svg">
+          <button class="element__button link">
           </button>
         </div>
       </article>
@@ -87,8 +79,7 @@
         <img class="element__photo" src="./images/6. Cairns-Botanic-Gardens_Cairns_Australia-min.jpg">
         <div class="element__content">
           <p class="element__text">Cairns, begonia</p>
-          <button class="element__button">
-            <img class="element__like" src="./images/like.svg">
+          <button class="element__button link">
           </button>
         </div>
       </article>
@@ -104,19 +95,17 @@
       <h2 class="popup__title">Редактировать профиль</h2>
       <form class="popup__editprofile">
         <label class="popup__form">
-          <input class="popup__editform" type="text" name="name" placeholder="Жак-Ив Кусто">
+          <input class="popup__editform popup__editform_name" type="text" name="name" placeholder="Жак-Ив Кусто">
         </label>
         <img class="popup__line" src="./images/popupeditprofileformline.svg">
         <label class="popup__form">
-          <input class="popup__editform" type="text" name="about" placeholder="Исследователь океана">
+          <input class="popup__editform popup__editform_about" type="text" name="about" placeholder="Исследователь океана">
         </label>
         <img class="popup__line" src="./images/popupeditprofileformline.svg">
-        <button class="popup__savebutton popup__savebutton_popup_closed link" type="submit">Сохранить</button>
+        <button class="popup__savebutton link" type="submit">Сохранить</button>
       </form>
     </container>
   </section>
-  <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
   <script src="./script.js"></script>
 </body>
-
 </html>
