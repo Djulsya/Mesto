@@ -1,8 +1,9 @@
 .profile__addbutton {
-  width: fit-content;
+  /* width: 150px; */
   height: 50px;
   padding: 0;
   border-style: none;
   background-color: black;
+  width: fit-content;
   margin: 0;
 }

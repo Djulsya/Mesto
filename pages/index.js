@@ -9,7 +9,7 @@ let buttonEditProfileSave = document.querySelector('.popup__savebutton');
 let buttonEditProfileClose = document.querySelector('.popup__closebutton');
 
 function openPopup() {
-  popup.classList.add('popup_opened');
+  popup.classList.add('popup__opened');
   nameInput.value = getName.textContent;
   aboutInput.value = getAbout.textContent;
 }
@@ -21,7 +21,7 @@ function formSubmitHandler(evt) {
 }
 
 function closePopup() {
-  popup.classList.remove('popup_opened');
+  popup.classList.remove('popup__opened');
 }
 
 buttonEditProfileOpen.addEventListener('click', openPopup);
