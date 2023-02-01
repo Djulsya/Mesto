@@ -1,0 +1,14 @@
+.popup__closebutton {
+  margin: auto;
+  padding: 0 0 370px 470px;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+
+@media screen and (max-width: 880px) {
+  .popup__closebutton {
+    padding-bottom: 367px;
+    padding-left: 262px;
+  }
+}

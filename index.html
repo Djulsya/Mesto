@@ -14,7 +14,6 @@
 <body class="page">
   <header class="header">
     <img class="header__logo" src="./images/header__logo.svg" alt="логотип сервиса место">
-    <img class="header__borderline" src="./images/line.jpg">
   </header>
   <main class="content">
     <section class="profile">
@@ -23,91 +22,91 @@
         <div class="profile__info">
           <div class="profile__title">
             <h1 class="profile__name">Жак-Ив Кусто</h1>
-            <button class="profile__editbutton link">
-              <img class="profile__editbutton" src="./images/editbutton.svg"
-                alt="кнопка редактирования личной информации профиля">
+            <button class="profile__editbutton link" type="button">
             </button>
           </div>
           <p class="profile__about">Исследователь океана</p>
         </div>
       </div>
-      <button class="profile__addbutton-img profile__addbutton link">
+      <button class="profile__addbutton-img profile__addbutton link" type="button">
       </button>
     </section>
     <section class="elements">
       <article class="element">
-        <img class="element__photo" src="./images/1. Royal-Botanical-Gardens-of-Peradeniya_Kandy_Sri-Lanka-2-min.jpg">
+        <img class="element__photo" src="./images/1. Royal-Botanical-Gardens-of-Peradeniya_Kandy_Sri-Lanka-2-min.jpg"
+          alt="фотография алоказий из ботанического сада, Шри-ланка">
         <div class="element__content">
-          <p class="element__text">Sri-Lanka, alocasia</p>
-          <button class="element__button link">
+          <h2 class="element__text">Sri-Lanka, alocasia</h2>
+          <button class="element__button link" type="button">
           </button>
         </div>
       </article>
       <article class="element">
-        <img class="element__photo" src="./images/2. United-Kingdom-min.jpg">
+        <img class="element__photo" src="./images/2. United-Kingdom-min.jpg"
+          alt="фотография соцветия и коробочек мака, Великобритания">
         <div class="element__content">
-          <p class="element__text">UK, papaver</p>
-          <button class="element__button link">
+          <h2 class="element__text">UK, papaver</h2>
+          <button class="element__button link" type="button">
           </button>
         </div>
       </article>
       <article class="element">
-        <img class="element__photo" src="./images/3. Denver_United-States.jpg">
+        <img class="element__photo" src="./images/3. Denver_United-States.jpg" alt="фотография кувшинок, США">
         <div class="element__content">
-          <p class="element__text">Denver, nymphaea</p>
-          <button class="element__button link">
+          <h2 class="element__text">Denver, nymphaea</h2>
+          <button class="element__button link" type="button">
           </button>
         </div>
       </article>
       <article class="element">
-        <img class="element__photo" src="./images/4. New-Forest-National-Park_UK.jpg">
+        <img class="element__photo" src="./images/4. New-Forest-National-Park_UK.jpg"
+          alt="фотография нефролепсиса и лошади в национальном парке, Великобритании">
         <div class="element__content">
-          <p class="element__text">New-Forest, nephrolepis and horse</p>
-          <button class="element__button link">
+          <h2 class="element__text">New-Forest, nephrolepis and horse</h2>
+          <button class="element__button link" type="button">
           </button>
         </div>
       </article>
       <article class="element">
-        <img class="element__photo" src="./images/5. Santa-Maria.jpg">
+        <img class="element__photo" src="./images/5. Santa-Maria.jpg" alt="фотография каладиумов, Санта-Мария">
         <div class="element__content">
-          <p class="element__text">Campania, caladium</p>
-          <button class="element__button link">
+          <h2 class="element__text">Campania, caladium</h2>
+          <button class="element__button link" type="button">
           </button>
         </div>
       </article>
       <article class="element">
-        <img class="element__photo" src="./images/6. Cairns-Botanic-Gardens_Cairns_Australia-min.jpg">
+        <img class="element__photo" src="./images/6. Cairns-Botanic-Gardens_Cairns_Australia-min.jpg"
+          alt="фотография бегонии в ботаническом саду, Австралия">
         <div class="element__content">
-          <p class="element__text">Cairns, begonia</p>
-          <button class="element__button link">
+          <h2 class="element__text">Cairns, begonia</h2>
+          <button class="element__button link" type="button">
           </button>
         </div>
       </article>
     </section>
   </main>
   <footer class="footer">
-    <h2 class="footer__copyright">&copy; 2022 Mesto Russia</h2>
+    <paragraph class="footer__copyright">&copy; 2022 Mesto Russia</paragraph>
   </footer>
   <section class="popup">
-    <div class="popup__background"></div>
-    <div class="popup__closebutton link"><img src="./images/closeicon.svg"></div>
-    <container class="popup__container">
+    <button class="popup__closebutton link" type="button"><img class="popup__closebutton-img"
+        src="./images/closeicon.svg" alt="кнопка закрытия окна редактирования личной информации профиля"></button>
+    <div class="popup__container">
       <h2 class="popup__title">Редактировать профиль</h2>
-      <form class="popup__editprofile">
+      <form class="popup__editprofile" name="editprofile">
         <label class="popup__form">
-          <input class="popup__editform popup__editform_name" type="text" name="name" placeholder="Жак-Ив Кусто">
+          <input class="popup__editform popup__editform-name" type="text" name="name" placeholder="Жак-Ив Кусто">
         </label>
-        <img class="popup__line" src="./images/popupeditprofileformline.svg">
         <label class="popup__form">
-          <input class="popup__editform popup__editform_about" type="text" name="about"
+          <input class="popup__editform popup__editform-about" type="text" name="about"
             placeholder="Исследователь океана">
         </label>
-        <img class="popup__line" src="./images/popupeditprofileformline.svg">
         <button class="popup__savebutton link" type="submit">Сохранить</button>
       </form>
-    </container>
+    </div>
   </section>
-  <script src="./pages/index.js"></script>
+  <script src="./scripts/index.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,19 @@
+.profile__editbutton {
+  width: fit-content;
+  width: 24px;
+  height: 24px;
+  border-style: none;
+  background-color: black;
+  margin: 0 0 9px 0;
+  background-image: url(../../../images/editbutton.svg);
+  cursor: url(../../../../images/kursor.svg) 2 2, default;
+}
+
+@media screen and (max-width: 880px) {
+  .profile__editbutton {
+    width: 18px;
+    height: 18px;
+    margin-bottom: 8px;
+    background-image: url(../../../images/editbuttonmobile.svg);
+  }
+}
