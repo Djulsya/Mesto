@@ -3,8 +3,8 @@ let buttonEditProfileOpen = document.querySelector('.profile__editbutton');
 let editForm = document.querySelector('.popup__container');
 let getName = document.querySelector('.profile__name');
 let getAbout = document.querySelector('.profile__about');
-let nameInput = editForm.querySelector('.popup__editform_name');
-let aboutInput = editForm.querySelector('.popup__editform_about');
+let nameInput = editForm.querySelector('.popup__editform-name');
+let aboutInput = editForm.querySelector('.popup__editform-about');
 let buttonEditProfileSave = document.querySelector('.popup__savebutton');
 let buttonEditProfileClose = document.querySelector('.popup__closebutton');
 

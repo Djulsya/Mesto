@@ -36,6 +36,6 @@
 @import url(../blocks/popup/__editprofile/popup__editprofile.css);
 @import url(../blocks/popup/__title/popup__title.css);
 @import url(../blocks/popup/__editform/popup__editform.css);
-@import url(../blocks/popup/__editform/_name/popup__editform_name.css);
-@import url(../blocks/popup/__editform/_about/popup__editform_about.css);
+@import url(../blocks/popup/__editform/editform-name/popup__editform-name.css);
+@import url(../blocks/popup/__editform/editform-about/popup__editform-about.css);
 @import url(../blocks/popup/__savebutton/popup__savebutton.css);
