@@ -13,7 +13,7 @@
 
 <body class="page">
   <header class="header">
-    <img class="header__logo" src="./images/header__logo.svg" alt="логотип сервиса место">
+    <img class="header__logo" src="./images/headerlogo.svg" alt="логотип сервиса место">
   </header>
   <main class="content">
     <section class="profile">
@@ -28,12 +28,12 @@
           <p class="profile__about">Исследователь океана</p>
         </div>
       </div>
-      <button class="profile__addbutton-img profile__addbutton link" type="button">
+      <button class="profile__addbutton link" type="button">
       </button>
     </section>
     <section class="elements">
       <article class="element">
-        <img class="element__photo" src="./images/1. Royal-Botanical-Gardens-of-Peradeniya_Kandy_Sri-Lanka-2-min.jpg"
+        <img class="element__photo" src="./images/1.Royal-Botanical-Gardens-of-Peradeniya_Kandy_Sri-Lanka-2-min.jpg"
           alt="фотография алоказий из ботанического сада, Шри-ланка">
         <div class="element__content">
           <h2 class="element__text">Sri-Lanka, alocasia</h2>
@@ -42,7 +42,7 @@
         </div>
       </article>
       <article class="element">
-        <img class="element__photo" src="./images/2. United-Kingdom-min.jpg"
+        <img class="element__photo" src="./images/2.United-Kingdom-min.jpg"
           alt="фотография соцветия и коробочек мака, Великобритания">
         <div class="element__content">
           <h2 class="element__text">UK, papaver</h2>
@@ -51,7 +51,7 @@
         </div>
       </article>
       <article class="element">
-        <img class="element__photo" src="./images/3. Denver_United-States.jpg" alt="фотография кувшинок, США">
+        <img class="element__photo" src="./images/3.Denver_United-States.jpg" alt="фотография кувшинок, США">
         <div class="element__content">
           <h2 class="element__text">Denver, nymphaea</h2>
           <button class="element__button link" type="button">
@@ -59,7 +59,7 @@
         </div>
       </article>
       <article class="element">
-        <img class="element__photo" src="./images/4. New-Forest-National-Park_UK.jpg"
+        <img class="element__photo" src="./images/4.New-Forest-National-Park_UK.jpg"
           alt="фотография нефролепсиса и лошади в национальном парке, Великобритании">
         <div class="element__content">
           <h2 class="element__text">New-Forest, nephrolepis and horse</h2>
@@ -68,7 +68,7 @@
         </div>
       </article>
       <article class="element">
-        <img class="element__photo" src="./images/5. Santa-Maria.jpg" alt="фотография каладиумов, Санта-Мария">
+        <img class="element__photo" src="./images/5.Santa-Maria.jpg" alt="фотография каладиумов, Санта-Мария">
         <div class="element__content">
           <h2 class="element__text">Campania, caladium</h2>
           <button class="element__button link" type="button">
@@ -76,7 +76,7 @@
         </div>
       </article>
       <article class="element">
-        <img class="element__photo" src="./images/6. Cairns-Botanic-Gardens_Cairns_Australia-min.jpg"
+        <img class="element__photo" src="./images/6.Cairns-Botanic-Gardens_Cairns_Australia-min.jpg"
           alt="фотография бегонии в ботаническом саду, Австралия">
         <div class="element__content">
           <h2 class="element__text">Cairns, begonia</h2>
@@ -87,20 +87,20 @@
     </section>
   </main>
   <footer class="footer">
-    <paragraph class="footer__copyright">&copy; 2022 Mesto Russia</paragraph>
+    <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
   </footer>
   <section class="popup">
-    <button class="popup__closebutton link" type="button"><img class="popup__closebutton-img"
-        src="./images/closeicon.svg" alt="кнопка закрытия окна редактирования личной информации профиля"></button>
     <div class="popup__container">
+      <button class="popup__closebutton link" type="button">
+      </button>
       <h2 class="popup__title">Редактировать профиль</h2>
       <form class="popup__editprofile" name="editprofile">
-        <label class="popup__form">
-          <input class="popup__editform popup__editform-name" type="text" name="name" placeholder="Жак-Ив Кусто">
+        <label class="popup__editform">
+          <input class="popup__editform_name" type="text" name="name" placeholder="Имя" value="Жак-Ив Кусто">
         </label>
-        <label class="popup__form">
-          <input class="popup__editform popup__editform-about" type="text" name="about"
-            placeholder="Исследователь океана">
+        <label class="popup__editform">
+          <input class="popup__editform_about" type="text" name="about"
+            placeholder="О себе" value="Исследователь океана">
         </label>
         <button class="popup__savebutton link" type="submit">Сохранить</button>
       </form>
