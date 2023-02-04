@@ -18,7 +18,7 @@ function formSubmitHandler(evt) {
   evt.preventDefault();
   getName.textContent = `${nameInput.value}`;
   getAbout.textContent = `${aboutInput.value}`;
-  closePopup ();
+  closePopup();
 }
 
 function closePopup() {
