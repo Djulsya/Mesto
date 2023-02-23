@@ -15,9 +15,7 @@
   <header class="header">
     <img class="header__logo" src="./images/headerlogo.svg" alt="логотип сервиса место">
   </header>
-
   <main class="content">
-
     <section class="profile">
       <div class="profile__content">
         <img class="profile__avatar" src="./images/avatar.jpg" alt="изображение аватара пользователя">
@@ -33,68 +31,10 @@
       <button class="profile__addbutton link" type="button">
       </button>
     </section>
-
-    <section class="album">
+    <section class="album" id="template-album">
       <div class="album__elements">
-        <div class="element">
-          <img class="element__photo" src="./images/1.NY.jpg" alt="фотография каладиума, Нью-Йорк">
-          <button class="element__button-delete" type="button"></button>
-          <div class="element__content">
-            <h2 class="element__text">NY, caladium</h2>
-            <button class="element__button link" type="button" name="like-button">
-            </button>
-          </div>
-        </div>
-        <div class="element">
-          <img class="element__photo" src="./images/2.Altai-Republic.jpg" alt="фотография георгинов, Алтайский край">
-          <button class="element__button-delete"></button>
-          <div class="element__content">
-            <h2 class="element__text">Altai Republic, dahlia</h2>
-            <button class="element__button link" type="button" name="like-button">
-            </button>
-          </div>
-        </div>
-        <div class="element">
-          <img class="element__photo" src="./images/3.New-Forest-National-Park_UK.jpg"
-            alt="фотография нефролепсиса и лошади в национальном парке, Великобритании">
-          <button class="element__button-delete"></button>
-          <div class="element__content">
-            <h2 class="element__text">UK New-Forest, nephrolepis and horse</h2>
-            <button class="element__button link" type="button">
-            </button>
-          </div>
-        </div>
-        <div class="element">
-          <img class="element__photo" src="./images/4.Royal-Botanical-Gardens-of-Peradeniya_Kandy_Sri-Lanka.jpg"
-            alt="фотография алоказий из ботанического сада, Шри-ланка">
-          <button class="element__button-delete"></button>
-          <div class="element__content">
-            <h2 class="element__text">Sri-Lanka, alocasia</h2>
-            <button class="element__button link" type="button">
-            </button>
-          </div>
-        </div>
-        <div class="element">
-          <img class="element__photo" src="./images/5.Vietnam.jpg" alt="фотография кувшинок, Вьетнам">
-          <button class="element__button-delete"></button>
-          <div class="element__content">
-            <h2 class="element__text">Vietnam, nymphaea</h2>
-            <button class="element__button link" type="button">
-            </button>
-          </div>
-        </div>
-        <div class="element">
-          <img class="element__photo" src="./images/6.Detroit.jpg" alt="фотография мака, Детроит">
-          <button class="element__button-delete"></button>
-          <div class="element__content">
-            <h2 class="element__text">Detroit, papaver</h2>
-            <button class="element__button link" type="button">
-            </button>
-          </div>
-        </div>
       </div>
     </section>
-
   </main>
   <footer class="footer">
     <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
@@ -124,7 +64,7 @@
   <!-- Окно добавления фотокарточки -->
   <section class="popup popup-addphoto">
     <div class="popup__container popup__container-addphoto">
-      <button class="popup__closebutton popup__closebutton-addphoto link" type="button">
+      <button class="popup__closebutton popup__closebutton-addphoto link" id="popup__closeadd" type="button">
       </button>
       <h2 class="popup__title popup__title-addphoto">Новое место</h2>
       <form class="popup__editprofile popup__editprofile-addphoto" name="editprofile">
@@ -140,6 +80,31 @@
     </div>
   </section>
   <!-- Окно добавления фотокарточки -->
+
+  <!-- Стартовые фотокарточки -->
+  <template id="template-element">
+    <div class="element">
+      <img class="element__photo" src="" alt="">
+      <button class="element__button-delete link" type="button"></button>
+      <div class="element__content">
+        <h2 class="element__text"></h2>
+        <button class="element__button-like link" type="button" name="like-button">
+        </button>
+      </div>
+    </div>
+  </template>
+  <!-- Стартовые фотокарточки -->
+
+  <!-- Развёрнутые фото из карточки -->
+  <section class="popup popup__openphoto" id="open-photo">
+    <div class="popup__container-openphoto">
+      <button class="popup__closebutton popup__closebutton-photo link" type="button">
+      </button>
+      <img class="popup__photo-openphoto" src="#" alt="Фото в развёрнутом виде" />
+      <p class="popup__photo-info"></p>
+    </div>
+  </section>
+  <!-- Развёрнутые фото из карточки -->
 
   <script src="./scripts/index.js"></script>
 </body>
