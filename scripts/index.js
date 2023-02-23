@@ -18,7 +18,6 @@ const buttonAddPhotoSave = document.querySelector('.popup__savebutton-addphoto')
 const buttonAddPhotoClose = document.querySelector('.popup__closebutton-addphoto');
 // 2.1 окно добавления фотокарточки 
 
-
 // 3.1 карточки 
 const elementsAlbum = document.querySelector('.album__elements');
 const albumSection = document.querySelector('.popup__openphoto');
