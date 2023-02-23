@@ -20,7 +20,7 @@ const buttonAddPhotoClose = document.querySelector('.popup__closebutton-addphoto
 
 // 3.1 карточки 
 const elementsAlbum = document.querySelector('.album__elements');
-const albumSection = document.querySelector('.popup__openphoto');
+const albumSection = document.querySelector('.popup-openphoto');
 const albumPhoto = albumSection.querySelector('.popup__photo-openphoto');
 const albumElementsInfo = albumSection.querySelector('.popup__photo-info');
 const buttonElementsAlbumClose = albumSection.querySelector('.popup__closebutton-photo');
