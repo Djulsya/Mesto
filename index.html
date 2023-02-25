@@ -41,9 +41,9 @@
   </footer>
 
   <!-- Окно редактирования профиля -->
-  <section class="popup">
+  <section class="popup profile-popup">
     <div class="popup__container">
-      <button class="popup__closebutton link" type="button">
+      <button class="popup__closebutton popup__closebutton-profile popup__close link" type="button">
       </button>
       <h2 class="popup__title">Редактировать профиль</h2>
       <form class="popup__editprofile" name="editprofile">
@@ -55,7 +55,7 @@
           <input class="popup__input popup__input_type_about" type="text" name="about" placeholder="О себе"
             value="Исследователь океана">
         </label>
-        <button class="popup__savebutton link" type="submit">Сохранить</button>
+        <button class="popup__savebutton popup__savebutton-profile link" type="submit">Сохранить</button>
       </form>
     </div>
   </section>
@@ -64,7 +64,8 @@
   <!-- Окно добавления фотокарточки -->
   <section class="popup popup-addphoto">
     <div class="popup__container popup__container-addphoto">
-      <button class="popup__closebutton popup__closebutton-addphoto link" id="popup__closeadd" type="button">
+      <button class="popup__closebutton popup__closebutton-addphoto popup__close link" id="popup__closeadd"
+        type="button">
       </button>
       <h2 class="popup__title popup__title-addphoto">Новое место</h2>
       <form class="popup__editprofile popup__editprofile-addphoto" name="editprofile">
@@ -99,7 +100,7 @@
   <!-- Развёрнутые фото из карточки -->
   <section class="popup popup-openphoto" id="open-photo">
     <div class="popup__container-openphoto">
-      <button class="popup__closebutton popup__closebutton-photo link" type="button">
+      <button class="popup__closebutton popup__closebutton-photo popup__close link" type="button">
       </button>
       <img class="popup__photo-openphoto" src="#" alt="Фото в развёрнутом виде" />
       <p class="popup__photo-info"></p>

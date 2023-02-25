@@ -1,5 +1,10 @@
+// общее
+const popup = document.querySelector('.popup')
+const closeButtons = document.querySelectorAll('.popup__close');
+// общее
+
 // 1.1 окно редактирования профиля
-const popup = document.querySelector('.popup');
+const profilePopup = document.querySelector('.profile-popup'); //popup
 const buttonEditProfileOpen = document.querySelector('.profile__editbutton');
 const getName = document.querySelector('.profile__name');
 const getAbout = document.querySelector('.profile__about');
@@ -28,6 +33,7 @@ const popupAddphoto = document.querySelector('.popup-addphoto');
 const editFormAddPhoto = popupAddphoto.querySelector('.popup__editprofile-addphoto');
 const titleInput = popupAddphoto.querySelector('.popup__input-addphoto_type_title');
 const linkInput = popupAddphoto.querySelector('.popup__input-addphoto_type_link');
+const elementPhoto = document.querySelector('.element__photo');
 const initialCards = [
   {
     name: 'NY, caladium',
@@ -54,59 +60,52 @@ const initialCards = [
     link: 'https://images.unsplash.com/photo-1589720061712-10b534c7218e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80'
   }
 ];
-// 3.1 карточки 
+// 3.1 карточки
 
-// 1.2 окно редактирования профиля 
-function openPopup() {
+// общее
+function openPopup(popup) {
   popup.classList.add('popup_opened');
-  nameInput.value = getName.textContent;
-  aboutInput.value = getAbout.textContent;
 }
 
-function formSubmitHandler(evt) {
+function closePopup(popup) {
+  popup.classList.remove('popup_opened');
+}
+
+closeButtons.forEach((button) => {
+  const popup = button.closest('.popup');
+  button.addEventListener('click', () => closePopup(popup));
+});
+// общее
+
+// 1.2 окно редактирования профиля
+function openProfilePopup() {
+  nameInput.value = getName.textContent;
+  aboutInput.value = getAbout.textContent;
+  closePopup(profilePopup);
+}
+
+function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   getName.textContent = `${nameInput.value}`;
   getAbout.textContent = `${aboutInput.value}`;
-  closePopup();
+  closePopup(profilePopup);
 }
-
-function closePopup() {
-  popup.classList.remove('popup_opened');
-}
-// 1.2 окно редактирования профиля 
-
-// 2.2 окно добавления фотокарточки 
-function openPopupPhoto() {
-  popupPhoto.classList.add('popup_opened');
-}
-
-function closePopupPhoto() {
-  popupPhoto.classList.remove('popup_opened');
-}
-// 2.2 окно добавления фотокарточки
+// 1.2 окно редактирования профиля
 
 // 3.2 карточки 
-function expandPopupPhoto() {
-  albumSection.classList.add('popup_opened');
-}
-
-function turnPopupPhoto() {
-  albumSection.classList.remove('popup_opened');
-}
-
-function getLikeActive(evt) {
+function getToggleLike(evt) {
   evt.target.classList.toggle('element__button-like_active');
 }
 
-function getDeleteElement(evt) {
+function deleteElement(evt) {
   evt.target.closest('.element').remove();
 }
 
-function getExpandPhoto(link, alt) {
+function openPhoto(link, alt) {
   albumPhoto.src = link;
   albumPhoto.alt = alt;
   albumElementsInfo.textContent = alt;
-  expandPopupPhoto(albumSection);
+  openPopup(albumSection);
 }
 
 function createCardBox(item) {
@@ -119,9 +118,9 @@ function createCardBox(item) {
   elementPhoto.src = item.link;
   elementPhoto.alt = item.name;
   elementText.textContent = item.name;
-  elementButtonDelete.addEventListener('click', getDeleteElement);
-  elementPhoto.addEventListener('click', () => getExpandPhoto(item.link, item.name));
-  elementButtonLike.addEventListener('click', getLikeActive);
+  elementButtonDelete.addEventListener('click', deleteElement);
+  elementPhoto.addEventListener('click', () => openPhoto(item.link, item.name));
+  elementButtonLike.addEventListener('click', getToggleLike);
   return createElement;
 }
 
@@ -133,30 +132,22 @@ function createAddCard(evt) {
   editFormAddPhoto.reset();
 }
 
-function createExpandPhoto() {
-  const expandPhoto = initialCards.map(item => {
-    const createElement = createCardBox(item);
-    return createElement;
-  });
+function renderInitialCards() {
+  const expandPhoto = initialCards.map(createCardBox);
   elementsAlbum.append(...expandPhoto);
 }
-createExpandPhoto();
+renderInitialCards();
 // 3.2 карточки
 
 // 1.3 окно редактирования профиля
-buttonEditProfileOpen.addEventListener('click', openPopup);
-editForm.addEventListener('submit', formSubmitHandler);
-buttonEditProfileClose.addEventListener('click', closePopup);
+buttonEditProfileOpen.addEventListener('click', () => openPopup(profilePopup));
+editForm.addEventListener('submit', handleProfileFormSubmit);
 // 1.3 окно редактирования профиля
 
 // 2.3 окно добавления фотокарточки
-buttonAddPhotoOpen.addEventListener('click', openPopupPhoto);
-buttonAddPhotoSave.addEventListener('click', closePopupPhoto);
-editFormPhoto.addEventListener('submit', formSubmitHandler);
-buttonAddPhotoClose.addEventListener('click', closePopupPhoto);
+buttonAddPhotoOpen.addEventListener('click', () => openPopup(popupAddphoto));
 // 2.3 окно добавления фотокарточки
 
 // 3.3 карточки
-buttonElementsAlbumClose.addEventListener('click', turnPopupPhoto);
 editFormAddPhoto.addEventListener('submit', createAddCard);
 // 3.3 карточки
