@@ -1,10 +1,9 @@
-// общее
-const popup = document.querySelector('.popup')
+// 0.1 общее
 const closeButtons = document.querySelectorAll('.popup__close');
-// общее
+// 0.1 общее
 
 // 1.1 окно редактирования профиля
-const profilePopup = document.querySelector('.profile-popup'); //popup
+const profilePopup = document.querySelector('.profile-popup');
 const buttonEditProfileOpen = document.querySelector('.profile__editbutton');
 const getName = document.querySelector('.profile__name');
 const getAbout = document.querySelector('.profile__about');
@@ -62,20 +61,38 @@ const initialCards = [
 ];
 // 3.1 карточки
 
-// общее
+// 0.2 общее
+function handlePressEsc(event) {
+  if (event.key === "Escape") {
+    const openedPopupActive = document.querySelector(".popup_opened");
+    closePopup(openedPopupActive);
+  }
+}
+
+function handleClickOverlay(event) {
+  if (event.target.classList.contains("popup")) {
+    const openedPopupActive = document.querySelector(".popup_opened");
+    closePopup(openedPopupActive);
+  }
+}
+
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener("keyup", handlePressEsc);
+  document.addEventListener("click", handleClickOverlay);
 }
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  document.removeEventListener("keyup", handlePressEsc);
+  document.removeEventListener("click", handleClickOverlay);
 }
 
 closeButtons.forEach((button) => {
   const popup = button.closest('.popup');
   button.addEventListener('click', () => closePopup(popup));
 });
-// общее
+// 0.2 общее
 
 // 1.2 окно редактирования профиля
 function openProfilePopup() {
@@ -93,7 +110,7 @@ function handleProfileFormSubmit(evt) {
 // 1.2 окно редактирования профиля
 
 // 3.2 карточки 
-function getToggleLike(evt) {
+function toggleLike(evt) {
   evt.target.classList.toggle('element__button-like_active');
 }
 
@@ -108,7 +125,7 @@ function openPhoto(link, alt) {
   openPopup(albumSection);
 }
 
-function createCardBox(item) {
+function createCard(item) {
   const templateElement = document.querySelector('#template-element').content;
   const createElement = templateElement.querySelector('.element').cloneNode(true);
   const elementButtonDelete = createElement.querySelector('.element__button-delete');
@@ -120,20 +137,20 @@ function createCardBox(item) {
   elementText.textContent = item.name;
   elementButtonDelete.addEventListener('click', deleteElement);
   elementPhoto.addEventListener('click', () => openPhoto(item.link, item.name));
-  elementButtonLike.addEventListener('click', getToggleLike);
+  elementButtonLike.addEventListener('click', toggleLike);
   return createElement;
 }
 
 function createAddCard(evt) {
   evt.preventDefault();
-  const newElement = createCardBox({ name: titleInput.value, link: linkInput.value });
+  const newElement = createCard({ name: titleInput.value, link: linkInput.value });
   elementsAlbum.prepend(newElement);
   closePopup(popupAddphoto);
   editFormAddPhoto.reset();
 }
 
 function renderInitialCards() {
-  const expandPhoto = initialCards.map(createCardBox);
+  const expandPhoto = initialCards.map(createCard);
   elementsAlbum.append(...expandPhoto);
 }
 renderInitialCards();
