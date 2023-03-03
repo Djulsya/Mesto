@@ -7,13 +7,13 @@ const enableValidationConfig = {
 };
 
 // 1. изменение кнопки
-function toggleSaveButton(button, active, config) {
-  if (active) {
-    button.classList.remove(config.inactiveButtonClass);
-    button.disabled = false;
+function toggleSaveButton(submitSaveButton, formElement, config) {
+  if (formElement) {
+    submitSaveButton.disabled = false;
+    submitSaveButton.classList.remove(config.inactiveButtonClass);
   } else {
-    button.classList.add(config.inactiveButtonClass);
-    button.disabled = true;
+    submitSaveButton.disabled = true;
+    submitSaveButton.classList.add(config.inactiveButtonClass);
   }
 }
 // 1. изменение кнопки 
@@ -44,6 +44,7 @@ function isValid(formElement, inputElement, config) {
 function trackEventListener(formElement, config) {
   const submitSaveButton = formElement.querySelector(config.submitButtonSelector);
   const inputPopup = formElement.querySelectorAll(config.inputSelector);
+  toggleSaveButton(submitSaveButton, formElement.checkValidity(), config);
   inputPopup.forEach((inputElement) => {
     inputElement.addEventListener("input", () => {
       isValid(formElement, inputElement, config);

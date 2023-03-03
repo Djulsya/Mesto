@@ -12,6 +12,7 @@ const nameInput = editForm.querySelector('.popup__input_type_name');
 const aboutInput = editForm.querySelector('.popup__input_type_about');
 const buttonEditProfileSave = document.querySelector('.popup__savebutton');
 const buttonEditProfileClose = document.querySelector('.popup__closebutton');
+const profileEditForm = document.querySelector('.popup__editprofile');
 // 1.1 окно редактирования профиля
 
 // 2.1 окно добавления фотокарточки
@@ -71,8 +72,7 @@ function handlePressEsc(event) {
 
 function handleClickOverlay(event) {
   if (event.target.classList.contains("popup")) {
-    const openedPopupActive = document.querySelector(".popup_opened");
-    closePopup(openedPopupActive);
+    closePopup(event.target);
   }
 }
 
@@ -147,6 +147,7 @@ function createAddCard(evt) {
   elementsAlbum.prepend(newElement);
   closePopup(popupAddphoto);
   editFormAddPhoto.reset();
+  toggleSaveButton(buttonAddPhotoSave, false, enableValidationConfig);
 }
 
 function renderInitialCards() {
@@ -157,7 +158,11 @@ renderInitialCards();
 // 3.2 карточки
 
 // 1.3 окно редактирования профиля
-buttonEditProfileOpen.addEventListener('click', () => openPopup(profilePopup));
+buttonEditProfileOpen.addEventListener('click', () => {
+  nameInput.value = getName.textContent;
+  aboutInput.value = getAbout.textContent;
+  openPopup(profilePopup)
+});
 editForm.addEventListener('submit', handleProfileFormSubmit);
 // 1.3 окно редактирования профиля
 
