@@ -1,4 +1,4 @@
-export class FormValidator {
+export default class FormValidator {
   constructor(enableValidationConfig, formElement) {
     this._formElement = formElement;
     this._enableValidationConfig = enableValidationConfig;
@@ -8,6 +8,7 @@ export class FormValidator {
     this._submitButtonSelector = enableValidationConfig.submitButtonSelector;
     this._inputList = Array.from(this._formElement.querySelectorAll(this._enableValidationConfig.inputSelector));
     this._submitSaveButton = this._formElement.querySelector(this._enableValidationConfig.submitButtonSelector);
+    this._formList = Array.from(document.querySelectorAll(this._enableValidationConfig.formElement));
   };
 
   _hasErrorInput() {
@@ -17,7 +18,7 @@ export class FormValidator {
   };
 
   _toggleSaveButton() {
-    if (this._hasErrorInput() === true) {
+    if (this._hasErrorInput(this._inputList) === true) {
       this._submitSaveButton.classList.add(this._enableValidationConfig.inactiveButtonClass);
       this._submitSaveButton.disabled = true;
     } else {

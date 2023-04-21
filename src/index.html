@@ -17,8 +17,8 @@
   <main class="content">
     <section class="profile">
       <div class="profile__content">
-        <img class="profile__avatar link" src="<%=require('../src/images/Jacques-Yves-Cousteau-2.jpg')%>"
-          alt="изображение аватара пользователя">
+        <img class="profile__avatar" src="#" alt="изображение аватара пользователя">
+        <button class="profile__avatar-editbutton link" type="button"></button>
         <div class="profile__info">
           <div class="profile__title">
             <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -46,15 +46,15 @@
       <button class="popup__closebutton popup__closebutton-profile popup__close link" type="button">
       </button>
       <h2 class="popup__title">Редактировать профиль</h2>
-      <form class="popup__editprofile" name="editprofile" novalidate>
+      <form class="popup__editprofile popup__editprofile-data" name="editprofile" novalidate>
         <label class="popup__editform">
           <input class="popup__input popup__input_type_name" id="profilename-input" type="text" name="name"
-            placeholder="Имя" value="Жак-Ив Кусто" minlength="2" maxlength="40" required>
+            placeholder="Имя" value="" minlength="2" maxlength="40" required>
           <span class="popup__input-error popup__input-error_type_name" id="profilename-input-error"></span>
         </label>
         <label class="popup__editform">
           <input class="popup__input popup__input_type_about" id="profileabout-input" type="text" name="about"
-            placeholder="О себе" value="Исследователь океана" minlength="2" maxlength="200" required>
+            placeholder="О себе" value="" minlength="2" maxlength="200" required>
           <span class="popup__input-error popup__input-error_type_about" id="profileabout-input-error"></span>
         </label>
         <button class="popup__savebutton popup__savebutton-profile link" type="submit">Сохранить</button>
@@ -89,7 +89,7 @@
   <!-- Окно добавления фотокарточки -->
 
   <!-- Окно удаления фотокарточки 9ПР -->
-  <!-- <section class="popup popup-deletephoto">
+  <section class="popup popup-deletephoto">
     <div class="popup__container popup__container-deletephoto">
       <button class="popup__closebutton popup__closebutton-deletephoto popup__close link" id="popup__deleteadd"
         type="button">
@@ -98,26 +98,26 @@
       <button class="popup__savebutton popup__savebutton-deletephoto link" type="submit"
         id="popup__savebutton-deletephoto">Да</button>
     </div>
-  </section> -->
+  </section>
   <!-- Окно удаления фотокарточки 9РП -->
 
   <!-- Окно редактирования аватара 9ПР -->
-  <!-- <section class="popup popup-editavatar">
+  <section class="popup popup-editavatar">
     <div class="popup__container popup__container-editavatar">
       <button class="popup__closebutton popup__closebutton-editavatar popup__close link" id="popup-editadd"
         type="button"></button>
-        <h2 class="popup__title popup__title-editavatar">Обновить аватар</h2>
-        <form class="popup__editprofile popup__editprofile-editavatar" name="editprofile-editavatar" novalidate>
-          <label class="popup__editform popup__editform-editavatar">
-            <input class="popup__input popup__input-editavatar popup__input-editavatar_type_link" id="photourl-input"
-            type="url" name="link" placeholder="Ссылка на картинку аватара" required>
-            <span class="popup__input-error popup__input-error_type_link" id="avatarurl-input-error"></span>
-          </label>
-          <button class="popup__savebutton popup__savebutton-editavatar link" type="submit"
+      <h2 class="popup__title popup__title-editavatar">Обновить аватар</h2>
+      <form class="popup__editprofile popup__editprofile-editavatar" name="editprofile-editavatar" novalidate>
+        <label class="popup__editform popup__editform-editavatar">
+          <input class="popup__input popup__input-editavatar popup__input_type_avatar" id="photourl-input" type="url"
+            name="link" placeholder="Ссылка на картинку аватара" required>
+          <span class="popup__input-error popup__input-error_type_link" id="avatarurl-input-error"></span>
+        </label>
+        <button class="popup__savebutton popup__savebutton-editavatar link" type="submit"
           id="popup__savebutton-editavatar">Сохранить</button>
-        </form>
+      </form>
     </div>
-  </section> -->
+  </section>
   <!-- Окно редактирования аватара 9ПР -->
 
   <!-- Стартовые фотокарточки -->
@@ -127,8 +127,9 @@
       <button class="element__button-delete link" type="button"></button>
       <div class="element__content">
         <h2 class="element__text"></h2>
-        <div class="element__like">
+        <div class="element__button">
           <button class="element__button-like link" type="button" name="like-button"></button>
+          <span class="element__button-quantity"></span>
         </div>
       </div>
     </div>
@@ -148,3 +149,4 @@
 </body>
 
 </html>
+
