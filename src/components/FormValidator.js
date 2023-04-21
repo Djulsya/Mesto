@@ -2,13 +2,15 @@ export default class FormValidator {
   constructor(enableValidationConfig, formElement) {
     this._formElement = formElement;
     this._enableValidationConfig = enableValidationConfig;
+
     this._inputSelector = enableValidationConfig.inputSelector;
     this._inputErrorClass = enableValidationConfig.inputErrorClass;
     this._inactiveButtonClass = enableValidationConfig.inactiveButtonClass;
     this._submitButtonSelector = enableValidationConfig.submitButtonSelector;
-    this._inputList = Array.from(this._formElement.querySelectorAll(this._enableValidationConfig.inputSelector));
-    this._submitSaveButton = this._formElement.querySelector(this._enableValidationConfig.submitButtonSelector);
-    this._formList = Array.from(document.querySelectorAll(this._enableValidationConfig.formElement));
+    this._inputList = Array.from(this._formElement.querySelectorAll(this._enableValidationConfig.inputSelector)); // inputCollection
+    this._submitSaveButton = this._formElement.querySelector(this._enableValidationConfig.submitButtonSelector); // submitButtonElement
+    this._formList = Array.from(document.querySelectorAll(this._enableValidationConfig.formElement) // formCollection
+    ); 
   };
 
   _hasErrorInput() {
@@ -17,13 +19,14 @@ export default class FormValidator {
     });
   };
 
-  _toggleSaveButton() {
+  _toggleSaveButton() { 
     if (this._hasErrorInput(this._inputList) === true) {
-      this._submitSaveButton.classList.add(this._enableValidationConfig.inactiveButtonClass);
-      this._submitSaveButton.disabled = true;
+      //this.inactiveButton();
+       this._submitSaveButton.classList.add(this._enableValidationConfig.inactiveButtonClass);
+       this._submitSaveButton.disabled = true;
     } else {
       this._submitSaveButton.classList.remove(this._enableValidationConfig.inactiveButtonClass);
-      this._submitSaveButton.disabled = false;
+      this._submitSaveButton.disabled = false;  
     };
   };
 
@@ -47,7 +50,7 @@ export default class FormValidator {
     };
   };
 
-  _trackEventListener() {
+  _trackEventListener() { 
     this._toggleSaveButton();
     this._inputList.forEach((inputElement) => {
       inputElement.addEventListener('input', () => {
@@ -63,6 +66,13 @@ export default class FormValidator {
       this._hideInputError(inputElement);
     });
   };
+
+  // inactiveButton = () => { // disabledButton
+  //   this._submitSaveButton.setAttribute('disabled', 'disabled');
+  //   this._submitSaveButton.classList.add(
+  //     this._enableValidationConfig.inactiveButtonClass
+  //   );
+  // };
 
   enableValidation() {
     this._trackEventListener();

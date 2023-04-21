@@ -4,7 +4,6 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  devtool: 'source-map',
   entry: {
     main: './src/pages/index.js'
   },
@@ -18,8 +17,7 @@ module.exports = {
     static: path.resolve(__dirname, './dist'),
     open: true,
     compress: true,
-    port: 8080,
-    hot: true
+    port: 8080
   },
   module: {
     rules: [{
