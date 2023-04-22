@@ -5,7 +5,7 @@ export default class PopupWithImage extends Popup {
     super(popupSelector);
     this._albumPhoto = this._popup.querySelector('.popup__photo-openphoto'); //изображение попапа
     this._albumElementsInfo = this._popup.querySelector('.popup__photo-info'); //текст попапа
-  }
+  };
 
   openPopup(name, link) {
     this._albumPhoto.setAttribute("alt", name);

@@ -30,6 +30,7 @@
 @import url(../blocks/element/__button-delete/element__button-delete.css);
 @import url(../blocks/element/__button/element__button.css);
 @import url(../blocks/element/__button-quantity/element__button-quantity.css);
+@import url(../blocks/element/__button-delete/_on/element__button-delete_on.css);
 
 @import url(../blocks/footer/__copyright/footer__copyright.css);
 
