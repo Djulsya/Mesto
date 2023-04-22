@@ -209,16 +209,23 @@ const editProfileInfo = new UserInfo({ name: getName, about: getAbout, avatar: g
 const popupDeletePhoto = new PopupWithDelete(".popup-deletephoto");
 popupDeletePhoto.trackEventListener();
 
-Promise.all([userInfo, elementaryCards])
-.then(() => cardList.renderItems())
-const userInfo = api
-  .getInfo()
+Promise.all([api.getInfo(), api.getInitialCards()])
   .then((data) => {
-    userId = data._id;
+    userId = data[0]._id;
     editProfileInfo.setUserInfo({
-      name: data.name,
-      about: data.about,
-      avatar: data.avatar,
+      name: data[0].name,
+      about: data[0].about,
+      avatar: data[0].avatar,
     });
+    cardList = new Section(
+      {
+        item: data[1],
+        renderer: (item) => {
+          cardList.addItems(createNewCard(item));
+        },
+      },
+      ".album__elements"
+    );
+    cardList.renderItems();
   })
-  .catch(err => console.error(err));
+  .catch((err) => console.error(err)); 
